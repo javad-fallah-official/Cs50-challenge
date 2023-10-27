@@ -27,6 +27,8 @@ class Skills(models.Model):
     skill_id = models.IntegerField(primary_key=True)
     
     
+    def __repr__(self):
+        return self.name
     
     
 class Room(models.Model):
@@ -34,12 +36,31 @@ class Room(models.Model):
     name = models.CharField(max_length=25)
     user_id = models.IntegerField()
 
+    def __repr__(self):
+        return self.name
 
 
 class User_Room(models.Model):
-    user_id = models.IntegerField()
+    user_id = models.IntegerField(primary_key=True)
     room_id = models.CharField(max_length=25)
 
 
-    def __repr__(self):
-        return self.name
+class Message(models.Model):
+    id = models.IntegerField(max_length=23, primary_key=True)
+    sender_id = models.IntegerField(max_length=20)
+    reciever_id = models.IntegerField(max_length=20)
+    content = models.CharField(max_length=300)
+    timestamp = models.TimeField(auto_now=True)
+
+class User_Roles(models.Model):
+    user_id = models.IntegerField()
+    role_id = models.IntegerField()
+    
+class Role(models.Model):
+    id = models.IntegerField(primary_key=True)
+    name = models.CharField(max_length=25)
+    
+
+class Alice_response(models.Model):
+    message_id = models.IntegerField(max_length=23)
+    response = models.CharField(max_length=300)
