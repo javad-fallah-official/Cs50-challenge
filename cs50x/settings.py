@@ -14,7 +14,7 @@ SECRET_KEY = 'django-insecure-&n(h26t1qoad@04d9b9x^+tl!c0$w#7rdkex$l*+(fz!n7davm
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['5.78.61.35','localhost','127.0.0.1','0.0.0.0']
+ALLOWED_HOSTS = ['5.78.61.35','localhost','127.0.0.1','0.0.0.0','ai.n-or-th.ir']
 
 
 # Application definition
@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'canvas',
     'profiles',
+    'Alice',
 ]
 
 MIDDLEWARE = [
