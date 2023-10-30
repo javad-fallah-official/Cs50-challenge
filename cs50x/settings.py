@@ -116,3 +116,5 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR,'templates/assets'),)
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 DATE_INPUT_FORMATS = ['%d/%m/%Y']
+
+OPENAI_API_KEY ="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"
