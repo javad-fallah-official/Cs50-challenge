@@ -37,13 +37,8 @@ html {
   font-family: 'IranSansWeb', 'Vazir', 'VazirMatn', sans-serif;
   font-weight: 500;
 }
-
-
-
-
-
-
-
+/*End of Add IranSansWeb Font and set it as default and main font for html
+ */
 :root {
   --sub-color: #24272e;
   --main-color: #101014;
