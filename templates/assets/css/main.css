@@ -1,3 +1,44 @@
+/* Add IranSansWeb Font and set it as default and main font for html
+ */
+@font-face {
+  font-family: 'IranSansWeb';
+  src: url('fonts/IRANSansWeb.eot');
+  src: url('fonts/IRANSansWeb.eot?') format('embedded-opentype'),
+  url('fonts/IRANSansWeb.woff2') format('woff2'),
+  url('fonts/IRANSansWeb.woff') format('woff'),
+  url('fonts/IRANSansWeb.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'IranSansWeb';
+  src: url('fonts/IRANSansWeb_Medium');
+  src: url('fonts/IRANSansWeb_Medium.eot') format('embedded-opentype'),
+  url('fonts/IRANSansWeb_Medium.woff2') format('woff2'),
+  url('fonts/IRANSansWeb_Medium.woff') format('woff'),
+  url('fonts/IRANSansWeb_Medium.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'IranSansWeb';
+  src: url('fonts/IRANSansWeb_Bold.eot');
+  src: url('fonts/IRANSansWeb_Bold.eot') format('embedded-opentype'),
+  url('fonts/IRANSansWeb_Bold.woff2') format('woff2'),
+  url('fonts/IRANSansWeb_Bold.woff') format('woff'),
+  url('fonts/IRANSansWeb_Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+html {
+  font-family: 'IranSansWeb', 'Vazir', 'VazirMatn', sans-serif;
+  font-weight: 500;
+}
+/*End of Add IranSansWeb Font and set it as default and main font for html
+ */
 :root {
   --sub-color: #24272e;
   --main-color: #101014;
