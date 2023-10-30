@@ -1,5 +1,8 @@
 from pathlib import Path
 import os
+import json
+from dotenv import load_dotenv
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -117,4 +120,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 DATE_INPUT_FORMATS = ['%d/%m/%Y']
 
-# OPENAI_API_KEY ="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"
+OPENAI_API_KEY = os.getenv('OPENAI_API_KEY') 
