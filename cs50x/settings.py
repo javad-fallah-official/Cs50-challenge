@@ -117,4 +117,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 DATE_INPUT_FORMATS = ['%d/%m/%Y']
 
-OPENAI_API_KEY ="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"
+# OPENAI_API_KEY ="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"
