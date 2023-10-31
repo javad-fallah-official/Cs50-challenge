@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title> Profile </title>
+{% endblock %}
+
+{% block content %}
+
+    <div class="navbar-nav">
+
+        <a class="nav-item nav-link" href="{% url 'users:logout' %}">Logout</a>
+        <a class="nav-item nav-link" href="{% url 'users:edit_user' %}">Edit Profile</a>
+
+    </div>
+
+    {% if messages %}
+
+        {% for message in messages %}
+
+            <div >
+                {{ message }}
+            </div>
+
+        {% endfor %}
+
+    {% endif %}
+
+    <h2>{{ object.email }}'s Profile</h2>
+    <p>{{ object.first_name }}</p>
+    <p>{{ object.last_name }}</p>
+    <p>{{ object.email }}</p>
+
+{% endblock %}

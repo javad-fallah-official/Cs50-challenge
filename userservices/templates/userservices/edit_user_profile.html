@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h2>Update Profile</h2>
+
+    <div class="navbar-nav">
+
+        <a class="nav-item nav-link" href="{% url 'users:change-password' %}">Change Password</a>
+
+    </div>
+
+    <form method="post">
+
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Update Profile</button>
+
+    </form>
+
+{% endblock content %}
