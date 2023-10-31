@@ -29,8 +29,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'userservices.apps.UserservicesConfig',
     'canvas',
-    'profiles',
+    # 'profiles',
     'Alice',
 ]
 
@@ -44,7 +45,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+
+LOGIN_REDIRECT_URL = '/userservices/profile/me'
+
 ROOT_URLCONF = 'cs50x.urls'
+
+AUTH_USER_MODEL = "userservices.CustomUser"
 
 TEMPLATES = [
     {
