@@ -57,6 +57,10 @@ def transcribe(audio):
     transcription = response['choices'][0]['text']
     return transcription
 
+def Voice_Answer(audio):
+   audio_file= open(audio, "rb")
+   text = openai.Audio.translate("whisper-1", audio_file)
+   return ask(text ['text'])
 
 
 with gr.Blocks() as UI:
@@ -79,7 +83,7 @@ with gr.Blocks() as UI:
     #     gr.Markdown("Look at me...")
 
     text_button.click(ask, inputs=text_input, outputs=text_output)
-    Voice_button.click(Translate, inputs=Voice_input, outputs=Voice_output)
+    Voice_button.click(Voice_Answer, inputs=Voice_input, outputs=Voice_output)
     image_button.click(imagine, inputs=image_input, outputs=image_output)
 
 
