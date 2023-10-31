@@ -2,7 +2,7 @@ from django.urls import path
 from .views import RegisterView, CustomLoginView, UserProfileView, CustomLogoutView, UpdateUserView,\
   ChangeUserPasswordView
 
-app_name = 'users'
+app_name = 'userservices'
 
 
 urlpatterns = [
