@@ -148,7 +148,7 @@ body {
 
 .app {
   display: flex;
-  height: 1000vh;
+  height: 100vh;
   padding: 17px;
   background: var(--sub-color);
   color: var(--text-color);
