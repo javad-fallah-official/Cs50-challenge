@@ -1,6 +1,5 @@
 from pathlib import Path
 import os
-import json
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -141,5 +140,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 DATE_INPUT_FORMATS = ['%d/%m/%Y']
 
-OPENAI_API_KEY = os.getenv('309f719fcf264e5fa47734227982dae9')
-
+OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
