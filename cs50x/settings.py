@@ -12,12 +12,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-&n(h26t1qoad@04d9b9x^+tl!c0$w#7rdkex$l*+(fz!n7davm'
+with open(os.path.join(BASE_DIR, 'secret_key.txt')) as f:
+    SECRET_KEY = f.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['49.13.23.40','localhost','127.0.0.1','0.0.0.0','n-or-th.ir']
+ALLOWED_HOSTS = ['ai.n-or-th.ir', 'n-or-th.ir', 'www.n-or-th.ir']
 
 
 # Application definition
@@ -31,7 +32,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'userservices.apps.UserservicesConfig',
     'canvas',
-    # 'profiles',
+    #'profiles',
     'Alice',
 ]
 
@@ -45,10 +46,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+ROOT_URLCONF = 'cs50x.urls'
 
 LOGIN_REDIRECT_URL = '/userservices/profile/me'
-
-ROOT_URLCONF = 'cs50x.urls'
 
 AUTH_USER_MODEL = "userservices.CustomUser"
 
@@ -116,8 +116,23 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'assets/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR,'templates/assets'),)
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'templates/')    
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+
+STATIC_URL = '/static/'
+
+#HTTPS settings
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = True
+
+#HSTS settings
+SECURE_HSTS_SECONDS = 31536000 # 1 year
+SECURE_HSTS_PRELOAD = True
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -126,4 +141,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 DATE_INPUT_FORMATS = ['%d/%m/%Y']
 
-OPENAI_API_KEY = os.getenv('OPENAI_API_KEY') 
+OPENAI_API_KEY = os.getenv('309f719fcf264e5fa47734227982dae9')
+
