@@ -1,7 +1,7 @@
 import openai
 import config
 from django.conf import settings
-#openai.api_key = settings.OPENAI_API_KEY
+openai.api_key = settings.OPENAI_API_KEY
 
 
 
@@ -22,3 +22,5 @@ def generateChatResponse(prompt):
         answer = 'Oops you beat the AI, try a different question, if the problem persists, come back later.'
 
     return answer
+
+print (generateChatResponse('hi'))

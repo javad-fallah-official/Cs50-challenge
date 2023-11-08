@@ -140,4 +140,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 DATE_INPUT_FORMATS = ['%d/%m/%Y']
 
-OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
+with open(os.path.join(BASE_DIR, 'openai_api_key.txt')) as f:
+   OPENAI_API_KEY = f.read().strip()
+
+# OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
+
+OUTPUT_PATH = '/home/cutlass/Alice-ai/'
