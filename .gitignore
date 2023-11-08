@@ -188,8 +188,7 @@ GitHub.sublime-settings
 .history
 *.pyc 
 
-secret_key.txt
+
 cs50x_uwsgi.ini
 cs50x.sock
 uwsgi_params
-openai_api_key.txt
