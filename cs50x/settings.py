@@ -17,7 +17,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS') 
+ALLOWED_HOSTS = ['49.13.23.40','n-or-th.ir', 'www.n-or-th.ir']
 
 
 # Application definition

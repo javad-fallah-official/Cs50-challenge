@@ -1,7 +1,7 @@
 import openai
 from django.conf import settings
 import gradio as gr
-
+import os 
 openai.api_key = settings.OPENAI_API_KEY
 
 
@@ -17,11 +17,11 @@ def imagine(text):
    return response['data'][0]['url']
 
 def Speech2Text(path):
-   audio_file= open(path, "rb")
+   audio_file= os.open(path, "rb")
    return openai.Audio.transcribe("whisper-1", audio_file)
 
 def Translate(audio):
-   audio_file= open(audio, "rb")
+   audio_file= os.open(audio, "rb")
    text = openai.Audio.translate("whisper-1", audio_file)
    return text ['text']
 
@@ -52,33 +52,35 @@ def transcribe(audio):
     return transcription
 
 def Voice_Answer(audio):
-   audio_file= open(audio, "rb")
+   audio_file= os.open(audio, "rb")
    text = openai.Audio.translate("whisper-1", audio_file)
    return generateChatResponse(text ['text'])
 
 
-with gr.Blocks() as UI:
-    gr.Markdown("بات هوش مصنوعی آلیس")
-    with gr.Tab("چت با متن"):
-        text_input = gr.Textbox()
-        text_output = gr.Textbox()
-        text_button = gr.Button("ارسال")
-    with gr.Tab("چت صوتی"):
-        with gr.Row():
-            Voice_input = gr.Audio(source="microphone",type="filepath")
-            Voice_output = gr.Textbox()
-        Voice_button = gr.Button("ارسال")
-    with gr.Tab("تولید عکس"):
-        with gr.Row():
-            image_input = gr.Textbox()
-            image_output = gr.Image(height="512",width="512",min_width="512")
-        image_button = gr.Button("ساختن")
-    # with gr.Accordion("Open for More!"):
-    #     gr.Markdown("Look at me...")
+# with gr.Blocks() as UI:
+#     gr.Markdown("بات هوش مصنوعی آلیس")
+#     with gr.Tab("چت با متن"):
+#         text_input = gr.Textbox()
+#         text_output = gr.Textbox()
+#         text_button = gr.Button("ارسال")
+#     with gr.Tab("چت صوتی"):
+#         with gr.Row():
+#             Voice_input = gr.Audio(source = "microphone", type="filepath")
+#             Voice_output = gr.Textbox()
+#         Voice_button = gr.Button("ارسال")
+#     with gr.Tab("تولید عکس"):
+#         with gr.Row():
+#             image_input = gr.Textbox()
+#             image_output = gr.Image(height="512",width="512",min_width="512")
+#         image_button = gr.Button("ساختن")
+#     # with gr.Accordion("Open for More!"):
+#     #     gr.Markdown("Look at me...")
 
-    text_button.click(generateChatResponse, inputs=text_input, outputs=text_output)
-    Voice_button.click(Voice_Answer, inputs=Voice_input, outputs=Voice_output)
-    image_button.click(imagine, inputs=image_input, outputs=image_output)
+#     text_button.click(generateChatResponse, inputs=text_input, outputs=text_output)
+#     Voice_button.click(Voice_Answer, inputs=Voice_input, outputs=Voice_output)
+#     image_button.click(imagine, inputs=image_input, outputs=image_output)
+    
+
 
 # UI.launch(
 # share=False,
