@@ -4,9 +4,9 @@
   font-family: 'IranSansWeb';
   src: url('fonts/IRANSansWeb.eot');
   src: url('fonts/IRANSansWeb.eot?') format('embedded-opentype'),
-  url('fonts/IRANSansWeb.woff2') format('woff2'),
-  url('fonts/IRANSansWeb.woff') format('woff'),
-  url('fonts/IRANSansWeb.ttf') format('truetype');
+    url('fonts/IRANSansWeb.woff2') format('woff2'),
+    url('fonts/IRANSansWeb.woff') format('woff'),
+    url('fonts/IRANSansWeb.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
 }
@@ -15,9 +15,9 @@
   font-family: 'IranSansWeb';
   src: url('fonts/IRANSansWeb_Medium');
   src: url('fonts/IRANSansWeb_Medium.eot') format('embedded-opentype'),
-  url('fonts/IRANSansWeb_Medium.woff2') format('woff2'),
-  url('fonts/IRANSansWeb_Medium.woff') format('woff'),
-  url('fonts/IRANSansWeb_Medium.ttf') format('truetype');
+    url('fonts/IRANSansWeb_Medium.woff2') format('woff2'),
+    url('fonts/IRANSansWeb_Medium.woff') format('woff'),
+    url('fonts/IRANSansWeb_Medium.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
 }
@@ -26,9 +26,9 @@
   font-family: 'IranSansWeb';
   src: url('fonts/IRANSansWeb_Bold.eot');
   src: url('fonts/IRANSansWeb_Bold.eot') format('embedded-opentype'),
-  url('fonts/IRANSansWeb_Bold.woff2') format('woff2'),
-  url('fonts/IRANSansWeb_Bold.woff') format('woff'),
-  url('fonts/IRANSansWeb_Bold.ttf') format('truetype');
+    url('fonts/IRANSansWeb_Bold.woff2') format('woff2'),
+    url('fonts/IRANSansWeb_Bold.woff') format('woff'),
+    url('fonts/IRANSansWeb_Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
 }
@@ -37,6 +37,7 @@ html {
   font-family: 'IranSansWeb', 'Vazir', 'VazirMatn', sans-serif;
   font-weight: 500;
 }
+
 /*End of Add IranSansWeb Font and set it as default and main font for html
  */
 :root {
@@ -58,9 +59,11 @@ html {
   --text-color: white;
   --text-focus-color: #4b9e5f;
 }
+
 * {
   transition: background-color 0.3s ease-in-out;
 }
+
 body.light-mode {
   --sub-color: #ebebeb;
   --main-color: #ffffff;
@@ -85,61 +88,79 @@ body.light-mode {
 body.light-mode .text-white {
   color: black !important;
 }
+
 body.light-mode svg {
   fill: black;
 }
+
 body.light-mode .chatbox-item,
 body.light-mode .share-button {
   border: 1px solid #e3e3e3;
 }
+
 body.light-mode .resend {
   color: #c37f35;
 }
+
 body.light-mode .chat-response,
 body.light-mode .date-time {
   color: black;
 }
+
 body.light-mode .share-button:hover {
   background: #e0e0e0;
 }
+
 body.light-mode #login-modal .modal-content {
   color: white !important;
 }
+
 body.light-mode #login-modal .close {
   fill: white;
 }
+
 body.light-mode .close-share:hover {
   background: #dcdcdc;
 }
+
 body.light-mode .share-checkbox svg {
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 100%;
 }
+
 body.light-mode .hide-ads-button svg {
   fill: none;
 }
+
 body.light-mode .support-message {
   color: black !important;
 }
+
 body.light-mode .button:hover {
   color: #0e8f42;
   border: 1px solid #0e8f42;
 }
+
 body.light-mode .button-v2:hover {
   color: black;
 }
+
 body.light-mode .button.add-button:hover svg {
   fill: #0e8f42;
 }
+
 body.light-mode .accept:hover {
   color: var(--fulldark-color);
 }
+
 body.light-mode #ch-text {
   fill: #000 !important;
 }
+
 body.light-mode #ch-bg {
   fill: #fff !important;
 }
+
 body {
   background: var(--main-color) !important;
   overflow-x: hidden;
@@ -148,15 +169,17 @@ body {
 
 .app {
   display: flex;
-  height: 1000vh;
+  height: 100vh;
   padding: 17px;
   background: var(--sub-color);
   color: var(--text-color);
   flex-basis: 100%;
 }
+
 .mobile-view {
   display: none;
 }
+
 .main-menu {
   display: flex !important;
   flex-direction: column !important;
@@ -169,6 +192,7 @@ body {
   border-right: 1px solid #80808033 !important;
   overflow-y: auto;
 }
+
 #main-menu .close {
   cursor: pointer;
   position: absolute;
@@ -234,6 +258,7 @@ body {
 .button-container {
   padding: 16px;
 }
+
 .button-container.hide {
   display: none;
 }
@@ -425,7 +450,7 @@ body {
   border: 1px solid;
 }
 
-.chatbox-item > svg {
+.chatbox-item>svg {
   margin-right: 10px;
   flex-shrink: 0;
 }
@@ -438,7 +463,7 @@ body {
   color: var(--text-focus-color);
 }
 
-.chatbox-item.focused > svg {
+.chatbox-item.focused>svg {
   fill: var(--text-focus-color);
 }
 
@@ -515,10 +540,12 @@ body {
   padding: 5px;
   flex-grow: 1;
 }
+
 .input-chat-container.hide,
 .share-button.hide {
   display: none !important;
 }
+
 .clear-button {
   display: none;
   position: absolute;
@@ -602,9 +629,11 @@ body {
   border-radius: 3px;
   cursor: no-drop;
 }
+
 .send-button.hide {
   display: none !important;
 }
+
 .send-button.active {
   background: #63e2b7;
   cursor: pointer;
@@ -942,6 +971,7 @@ body {
   font-weight: bold;
   font-size: 32px;
 }
+
 .right-side-container {
   display: flex;
   flex-direction: column;
@@ -949,9 +979,11 @@ body {
   flex-grow: 1;
   justify-content: flex-start;
 }
+
 .right-side-container .right-side-ads {
   position: relative;
 }
+
 .right-side-ads .ads-container {
   position: absolute;
   top: 0;
@@ -959,6 +991,7 @@ body {
   width: 100%;
   height: 100%;
 }
+
 .right-side-container .footer-button {
   position: relative;
   z-index: 1;
@@ -966,6 +999,7 @@ body {
   flex-shrink: 0;
   background: var(--main-color);
 }
+
 .bmc-btn-text {
   margin-right: 20px;
   margin-left: 0;
@@ -988,12 +1022,15 @@ body {
 .share-button:hover {
   background: #2b6f59;
 }
+
 .dialog.active .share-container {
   padding-left: 40px;
 }
+
 .dialog.active .share-checkbox {
   display: block;
 }
+
 .share-checkbox {
   display: none;
   position: absolute;
@@ -1002,20 +1039,25 @@ body {
   transform: translate(0%, -50%);
   cursor: pointer;
 }
+
 .share-checkbox svg {
   fill: white;
 }
+
 .share-checkbox.active .bg-checkbox {
   fill: #39c582;
 }
+
 .copy-container {
   display: none;
   flex: 1;
 }
+
 .copy-container.active,
 .close-share.active {
   display: block;
 }
+
 .copy-container .copy-button {
   text-align: center;
   padding: 10px;
@@ -1025,21 +1067,26 @@ body {
   cursor: pointer;
   color: var(--fulldark-color);
 }
+
 .copy-container .copy-button:hover {
   background: #81f7d0;
 }
+
 .text-gray {
   color: rgb(174, 174, 174);
 }
+
 .close-share {
   display: none;
   cursor: pointer;
   padding: 5px;
   border-radius: 100%;
 }
+
 .close-share:hover {
   background: #24272e;
 }
+
 .continue-chat-button {
   padding: 8px;
   width: fit-content;
@@ -1047,16 +1094,20 @@ body {
   background: #63e2b7;
   border-color: #63e2b7;
 }
+
 .continue-chat-button:hover {
   color: var(--fulldark-color);
   background-color: #75edc5;
 }
+
 .button-v2 {
   min-width: 150px;
 }
+
 .button-v2.hide {
   display: none;
 }
+
 .dark-mode-toggle {
   display: flex;
   justify-content: center;
@@ -1068,25 +1119,31 @@ body {
   background: white;
   cursor: pointer;
 }
+
 .sun.hide,
 .moon.hide {
   display: none;
 }
+
 .share-title {
   font-size: 14px;
   color: var(--text-focus-color);
 }
+
 #js-copy-failed .toast-body,
 #js-copy-success .toast-body {
   font-weight: bold;
   color: white;
 }
+
 #js-copy-failed .toast-body {
   background-color: rgb(243 40 40);
 }
+
 #js-copy-success .toast-body {
   background-color: rgb(34 189 30);
 }
+
 .toast-body .button-close {
   cursor: pointer;
   position: absolute;
@@ -1094,24 +1151,30 @@ body {
   top: 50%;
   transform: translate(-100%, -50%);
 }
+
 .select-all-button {
   cursor: pointer;
   padding-bottom: 1px;
   border-bottom: 1px solid transparent;
 }
+
 .select-all-button:hover {
   border-color: rgba(128, 128, 128, 0.451);
 }
+
 .footer-input {
   display: none;
 }
+
 .ads-share-page {
   max-height: 300px;
   overflow: hidden;
 }
+
 .footer-input-share-page {
   display: flex;
 }
+
 /**
  * ==============================================
  * Dot Pulse
@@ -1129,6 +1192,7 @@ body {
   animation: dot-pulse 1.5s infinite linear;
   animation-delay: 0.25s;
 }
+
 .dot-pulse::before,
 .dot-pulse::after {
   content: "";
@@ -1141,11 +1205,13 @@ body {
   background-color: #a1dc95;
   color: #a1dc95;
 }
+
 .dot-pulse::before {
   box-shadow: 9984px 0 0 -5px;
   animation: dot-pulse-before 1.5s infinite linear;
   animation-delay: 0s;
 }
+
 .dot-pulse::after {
   box-shadow: 10014px 0 0 -5px;
   animation: dot-pulse-after 1.5s infinite linear;
@@ -1156,43 +1222,53 @@ body {
   0% {
     box-shadow: 9984px 0 0 -5px;
   }
+
   30% {
     box-shadow: 9984px 0 0 2px;
   }
+
   60%,
   100% {
     box-shadow: 9984px 0 0 -5px;
   }
 }
+
 @keyframes dot-pulse {
   0% {
     box-shadow: 9999px 0 0 -5px;
   }
+
   30% {
     box-shadow: 9999px 0 0 2px;
   }
+
   60%,
   100% {
     box-shadow: 9999px 0 0 -5px;
   }
 }
+
 @keyframes dot-pulse-after {
   0% {
     box-shadow: 10014px 0 0 -5px;
   }
+
   30% {
     box-shadow: 10014px 0 0 2px;
   }
+
   60%,
   100% {
     box-shadow: 10014px 0 0 -5px;
   }
 }
+
 .mobile-top-ads {
   display: none;
   width: 100%;
   max-height: 100px;
 }
+
 @media screen and (max-width: 1024px) {
   .example-question {
     position: static;
@@ -1203,31 +1279,38 @@ body {
   .ads-container-xl {
     width: 100%;
   }
+
   .right-side-container {
     display: none;
   }
+
   .app {
     flex-grow: 1;
     width: 100vw;
   }
+
   .main-chat {
     width: calc(100% - 280px);
   }
+
   .main .overflow {
     overflow-x: hidden;
     overflow-y: auto;
     scrollbar-gutter: inherit;
     padding-right: 10.5px;
   }
+
   .footer-input-share-page {
     flex-direction: column;
     padding-top: 15px !important;
   }
 }
+
 .function-button-group {
   text-align: center;
   padding: 10px;
 }
+
 .hide-ads-button {
   display: flex;
   justify-content: center;
@@ -1244,18 +1327,23 @@ body {
   font-size: 13px;
   cursor: pointer;
 }
+
 .hide-ads-button.hide {
   display: none;
 }
+
 .hide-ads-button:hover {
   background: #75edc5;
 }
+
 .like-and-dislike {
   text-align: center;
 }
+
 .like-and-dislike.hide {
   display: none;
 }
+
 .like-and-dislike-container {
   width: fit-content;
   display: flex;
@@ -1274,25 +1362,31 @@ body {
   width: 100px;
   cursor: pointer;
 }
+
 .like-and-dislike-container .like:hover,
 .like-and-dislike-container .dislike:hover {
   background: #3d3d3d;
 }
+
 .like.active svg,
 .dislike.active svg {
   fill: white;
 }
+
 .like svg,
 .dislike svg {
   vertical-align: sub;
 }
+
 .like-and-dislike-container .like {
   border-right: 1px solid rgba(199, 198, 198, 0.3);
 }
+
 @media screen and (max-width: 768px) {
   .question-list {
     grid-template-columns: auto;
   }
+
   .mobile-view {
     display: block;
   }
@@ -1321,6 +1415,7 @@ body {
     padding: 0;
     flex-direction: column;
   }
+
   .mobile-top-ads {
     display: block;
     position: fixed;
@@ -1328,6 +1423,7 @@ body {
     top: 68px;
     left: 0;
   }
+
   .main-chat {
     width: 100%;
   }
@@ -1376,6 +1472,7 @@ body {
   pre code.hljs {
     width: max-content;
   }
+
   .dialog {
     width: 100vw;
     padding: 0;
@@ -1383,6 +1480,7 @@ body {
     margin-top: 168px;
     padding-bottom: 75px;
   }
+
   .chat-request {
     padding: 0 5px;
   }
@@ -1391,25 +1489,31 @@ body {
     max-height: unset;
     margin-bottom: 0;
   }
+
   .share-button svg {
     display: none !important;
   }
+
   .share-button {
     height: 40.5px;
   }
+
   .function-button-group {
     margin-bottom: 95px;
   }
+
   body.light-mode .footer-input,
   body.light-mode .mobile-nav {
     background: #ebebeb;
   }
+
   .like-and-dislike-container {
     height: 32px;
   }
 }
 
 @media screen and (max-width: 300px) {
+
   .stop-response,
   .resend,
   .response-loading {

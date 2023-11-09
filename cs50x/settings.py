@@ -142,4 +142,3 @@ DATE_INPUT_FORMATS = ['%d/%m/%Y']
 
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 
-OUTPUT_PATH = '/home/cutlass/Alice-ai/'

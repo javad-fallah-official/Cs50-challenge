@@ -1,34 +1,29 @@
 import openai
 from django.conf import settings
-
-# import json
-# import os
-# import gradio as gr
+import gradio as gr
 
 openai.api_key = settings.OPENAI_API_KEY
 
 
-
-
-# #variable to save all history of all users
-# database = {}
+#variable to save all history of all users
+database = {}
 
 # sending a request to dolle and return the url
-# def imagine(text):
-#    response = openai.Image.create(
-#    prompt=text,
-#    n=1,
-#    size="512x512")
-#    return response['data'][0]['url']
+def imagine(text):
+   response = openai.Image.create(
+   prompt=text,
+   n=1,
+   size="512x512")
+   return response['data'][0]['url']
 
-# def Speech2Text(path):
-#    audio_file= open(path, "rb")
-#    return openai.Audio.transcribe("whisper-1", audio_file)
+def Speech2Text(path):
+   audio_file= open(path, "rb")
+   return openai.Audio.transcribe("whisper-1", audio_file)
 
-# def Translate(audio):
-#    audio_file= open(audio, "rb")
-#    text = openai.Audio.translate("whisper-1", audio_file)
-#    return text ['text']
+def Translate(audio):
+   audio_file= open(audio, "rb")
+   text = openai.Audio.translate("whisper-1", audio_file)
+   return text ['text']
 
 # sending request to gpt
 def generateChatResponse(prompt):
@@ -39,7 +34,7 @@ def generateChatResponse(prompt):
     question['role'] = 'user'
     question['content'] = prompt
     messages.append(question)
-
+    
     response = openai.ChatCompletion.create(model="gpt-3.5-turbo",messages=messages)
 
     try:
@@ -50,40 +45,40 @@ def generateChatResponse(prompt):
     return answer
 
 
-# def transcribe(audio):
-#     # Transcribe the audio to text
-#     response = openai.Speech.create(audio)
-#     transcription = response['choices'][0]['text']
-#     return transcription
+def transcribe(audio):
+    # Transcribe the audio to text
+    response = openai.Speech.create(audio)
+    transcription = response['choices'][0]['text']
+    return transcription
 
-# def Voice_Answer(audio):
-#    audio_file= open(audio, "rb")
-#    text = openai.Audio.translate("whisper-1", audio_file)
-#    return generateChatResponse(text ['text'])
+def Voice_Answer(audio):
+   audio_file= open(audio, "rb")
+   text = openai.Audio.translate("whisper-1", audio_file)
+   return generateChatResponse(text ['text'])
 
 
-# with gr.Blocks() as UI:
-#     gr.Markdown("بات هوش مصنوعی آلیس")
-#     with gr.Tab("چت با متن"):
-#         text_input = gr.Textbox()
-#         text_output = gr.Textbox()
-#         text_button = gr.Button("ارسال")
-#     with gr.Tab("چت صوتی"):
-#         with gr.Row():
-#             Voice_input = gr.Audio(source="microphone",type="filepath")
-#             Voice_output = gr.Textbox()
-#         Voice_button = gr.Button("ارسال")
-#     with gr.Tab("تولید عکس"):
-#         with gr.Row():
-#             image_input = gr.Textbox()
-#             image_output = gr.Image(height="512",width="512",min_width="512")
-#         image_button = gr.Button("ساختن")
-#     # with gr.Accordion("Open for More!"):
-#     #     gr.Markdown("Look at me...")
+with gr.Blocks() as UI:
+    gr.Markdown("بات هوش مصنوعی آلیس")
+    with gr.Tab("چت با متن"):
+        text_input = gr.Textbox()
+        text_output = gr.Textbox()
+        text_button = gr.Button("ارسال")
+    with gr.Tab("چت صوتی"):
+        with gr.Row():
+            Voice_input = gr.Audio(source="microphone",type="filepath")
+            Voice_output = gr.Textbox()
+        Voice_button = gr.Button("ارسال")
+    with gr.Tab("تولید عکس"):
+        with gr.Row():
+            image_input = gr.Textbox()
+            image_output = gr.Image(height="512",width="512",min_width="512")
+        image_button = gr.Button("ساختن")
+    # with gr.Accordion("Open for More!"):
+    #     gr.Markdown("Look at me...")
 
-#     text_button.click(generateChatResponse, inputs=text_input, outputs=text_output)
-#     Voice_button.click(Voice_Answer, inputs=Voice_input, outputs=Voice_output)
-#     image_button.click(imagine, inputs=image_input, outputs=image_output)
+    text_button.click(generateChatResponse, inputs=text_input, outputs=text_output)
+    Voice_button.click(Voice_Answer, inputs=Voice_input, outputs=Voice_output)
+    image_button.click(imagine, inputs=image_input, outputs=image_output)
 
 # UI.launch(
 # share=False,
