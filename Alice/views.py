@@ -11,7 +11,9 @@ def home(request):
         Response['answer'] = generateChatResponse(prompt)
         return JsonResponse(Response)
 
-    return render(request,'Alice/index.html',context)
+    return render(request, 'Alice/index.html', context)
+
+
 
 def login(request):
     context={}

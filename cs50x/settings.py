@@ -11,13 +11,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-with open(os.path.join(BASE_DIR, 'secret_key.txt')) as f:
-    SECRET_KEY = f.read().strip()
+
+SECRET_KEY = os.getenv('SECRET_KEY') 
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ai.n-or-th.ir', 'n-or-th.ir', 'www.n-or-th.ir']
+ALLOWED_HOSTS = ['49.13.23.40','n-or-th.ir', 'www.n-or-th.ir']
 
 
 # Application definition
@@ -140,9 +140,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 DATE_INPUT_FORMATS = ['%d/%m/%Y']
 
-with open(os.path.join(BASE_DIR, 'openai_api_key.txt')) as f:
-   OPENAI_API_KEY = f.read().strip()
-
-# OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
+OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 
 OUTPUT_PATH = '/home/cutlass/Alice-ai/'
