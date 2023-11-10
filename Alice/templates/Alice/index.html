@@ -16,6 +16,8 @@
       </div>
       <div class="main-menu offcanvas offcanvas-start" id="main-menu">
 
+
+
         <div class="main">
           <div class="button-container">
             <div class="button add-button" data-bs-dismiss="offcanvas">
@@ -25,24 +27,60 @@
               </svg>
             </div>
           </div>
+
+
           <div class="chatbox-container custom-scrollbar"></div>
           <div class="ads-container">
             <script async="" src="../pagead2.googlesyndication.com/pagead/js/fbe56.txt?client=ca-pub-2586248939932785"
               crossorigin="anonymous"></script>
           </div>
         </div>
+        
+        
+        
+        
         <div class="footer">
-          <div class="site-url">
-          </div>
-        </div>
+          <!-- Existing content in the footer -->
+      
+          <!-- Profile Link -->
+          <a href="{% url 'userservices:profile' %}" class="myButton">
+              <span class="flex w-full flex-row flex-wrap-reverse justify-between">
+                  <div class="flex items-center gap-3 gizmo:gap-2">
+                      <span class="">
+                          <!-- You can add an SVG icon here if needed -->
+                      </span>
+                      <div class="flex flex-col">
+                          <span class="gizmo:font-semibold">Profile</span>
+                      </div>
+                  </div>
+              </span>
+          </a>
+      
+          <!-- Logout Link -->
+          <a href="{% url 'userservices:logout' %}" class="myButton">
+              <span class="flex w-full flex-row flex-wrap-reverse justify-between">
+                  <div class="flex items-center gap-3 gizmo:gap-2">
+                      <span class="">
+                          <!-- You can add an SVG icon here if needed -->
+                      </span>
+                      <div class="flex flex-col">
+                          <span class="gizmo:font-semibold">Logout</span>
+                      </div>
+                  </div>
+              </span>
+          </a>
       </div>
+      
+
+
+      </div>
+      
       <div class="main-chat">
-
-
         <main class="flex-shrink-0">
           <div class="container">
             <br>
             <br>
+	    <div class="flex gap-2 items-center justify-center flex-grow">
             <h1
               class="text-4xl font-semibold text-center text-gray-200 dark:text-gray-600 ml-auto mr-auto mb-10 sm:mb-16 flex gap-2 items-center justify-center flex-grow">
               Alice</h1>
@@ -51,7 +89,6 @@
             <br>
             <br>
             <br>
-
             <div id="list-group" class="list-group w-auto">
               <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3">
                 <img src="https://digital-practice.ams3.cdn.digitaloceanspaces.com/static%2Fapp%2Fimg%2Fopenai-logo.png"
@@ -106,7 +143,7 @@
             $("#list-group").append(html_data);
             $.ajax({
               type: "POST",
-              url: "{% url 'home' %}",
+              url: "{% url 'Alice:home' %}",
               data: {
                 'csrfmiddlewaretoken': '{{csrf_token}}',
                 'prompt': question
