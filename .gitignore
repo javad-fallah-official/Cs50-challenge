@@ -192,3 +192,4 @@ GitHub.sublime-settings
 cs50x_uwsgi.ini
 cs50x.sock
 uwsgi_params
+userservices/.views.py.swp
