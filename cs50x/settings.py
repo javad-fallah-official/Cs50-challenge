@@ -48,7 +48,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'cs50x.urls'
 
-LOGIN_REDIRECT_URL = '/userservices/profile/me'
+LOGIN_REDIRECT_URL = '/'
 
 AUTH_USER_MODEL = "userservices.CustomUser"
 
@@ -143,3 +143,8 @@ DATE_INPUT_FORMATS = ['%d/%m/%Y']
 
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+    }
+}

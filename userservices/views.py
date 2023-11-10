@@ -14,14 +14,14 @@ from .models import CustomUser
 class RegisterView(SuccessMessageMixin, CreateView):
     template_name = 'userservices/users_register.html'
     form_class = UserRegisterForm
-    success_url = reverse_lazy('userservices:register')
+    success_url = reverse_lazy('userservices:profile')
     success_message = "%(email)s was created successfully"
 
 
 class CustomLoginView(SuccessMessageMixin, LoginView):
     template_name = 'userservices/users_login.html'
     form_class = UserLoginForm
-    success_url = reverse_lazy('userservices:profile')
+#    success_url = reverse_lazy('home')
 
     def form_valid(self, form):
         user = form.get_user()
