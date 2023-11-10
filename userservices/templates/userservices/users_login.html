@@ -1,28 +1,53 @@
 {% extends "base.html" %}
-<title> Log in </title>
-{% block title %}
 
+{% load static %}
+
+{% block title %}
+    <title>Log in</title>
 {% endblock %}
 
 {% block content %}
-
-    {% if messages %}
-
-        {% for message in messages %}
-
-            <div >
-                {{ message }}
-            </div>
-
-        {% endfor %}
-
-    {% endif %}
-    <form method="POST">
+<div class="box-container">
+    <form class="box" method="POST">
         {% csrf_token %}
+        <h1>Login</h1>
+        <p>
+            <input type="text" name="username" placeholder="Enter your email" autocomplete="username" maxlength="254" required="True" id="id_username">
+        </p>
 
-            {{ form.as_p }}
-        <button class="btn-outline-info" type="submit">Log In</button>
+        <p>
+            <input type="password" name="password" placeholder="Enter your password" autocomplete="current-password" required="True" id="id_password">
+        </p>
 
+        <button type="submit">Login</button>
+        <p class="link">Don't have an account? <a href="/userservices/register/">Register here</a>.</p>
     </form>
+</div>
 
+<script>
+    var errorMessagesContainer = document.getElementById("error-messages");
+
+    if (errorMessagesContainer) {
+        var errorMessages = errorMessagesContainer.querySelectorAll("li");
+
+        // Display messages
+        var messageContainer = document.createElement("div");
+        messageContainer.className = "message-container";
+
+        errorMessages.forEach(function (errorMessage) {
+            var message = document.createElement("div");
+            message.className = "message";
+            message.textContent = errorMessage.textContent;
+            messageContainer.appendChild(message);
+        });
+
+        document.body.appendChild(messageContainer);
+
+        setTimeout(function () {
+            messageContainer.style.display = "none"; // Hide the message container after 3 seconds
+        }, 3000);
+    }
+</script>
+
+<link rel="stylesheet" href="{% static 'assets/css/login.css' %}">
 {% endblock %}
